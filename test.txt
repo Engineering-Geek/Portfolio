@@ -1,0 +1,1227 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-itunes-app" content="app-id=368660809" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"404c1769df","applicationID":"60226763","transactionName":"M1RVZxQCWEYCVkQKCgoeemUlTGBRE3ZfDREWXltfAxEZfA1RVRs=","queueTime":0,"applicationTime":141,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"UgUPVV5SGwUAVlNUAAcE",licenseKey:"404c1769df",applicationID:"60226763"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+    <meta name="google-site-verification" content="cBmEbrbx7iUtx2beR3NuCnF6lR-Qi4fsvtaNqPUKsqU"/>
+
+    <link rel="preconnect" href="https://cdn.optimizely.com">
+
+    <!-- connect to domain of Google Font files -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- optionally increase loading priority of Google Font CSS -->
+    <link rel="preload" as="style" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&display=swap" onload="this.rel='stylesheet'">
+
+    
+
+<link rel="manifest" href="/Images/Favicon/EN-CA/manifest.json">
+<link rel="shortcut icon" href="/Images/Favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="/Images/Favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/Images/Favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/Images/Favicon/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/Images/Favicon/new-apple-touch-icon.png">
+<link rel="mask-icon" href="/Images/Favicon/favicon-outlined.svg" color="#ED1C24">
+<meta name="msapplication-TileColor" content="#3E3E3E">
+<meta name="msapplication-TileImage" content="/Images/Favicon/mstile-144x144.png">
+<meta name="theme-color" content="#3e3e3e">
+        <script>
+        var Trader = Trader || {};
+
+        var gtmManager;
+        Trader.initDataLayer = function() {
+            gtmManager = new GtmManager();
+            gtmManager.initializeDataLayer({"vehicle":{"adID":"5-54907601","adType":"dealer","car360Enabled":"no","category":"Cars, Trucks & SUVs","condition":"used","dealerID":"5-ON20071119121715952","financingPrice":"no","listingPosition":"boost","make":"Nissan","model":"Murano","price":"23995","priceAnalysis":"great price","priceHistory":"not used","province":"ON","rawLocation":"","strikethrough":"no","subprimeLeadForm":"no","testingDimension":"pageload","transparency":"yes","upgradeHL":"no","upgradeMobileBoost":"yes","upgradePL":"no","upgradePPL":"no","upgradeTA":"no","upgradeTopSpot":"no","upgradeXPL":"no","upgradeInline":"no","upgradeSwipePro":"no","vehicleSpecialist":"no","year":"2018","olympus":"no","ncse":"no","chatEnabled":"no","chatProvider":"none","latlong":"","carfax":"view with email","showInsuranceWidgetOnTop":"yes","totalPictures":"24","mainPictureCM":"no","cmPictures":"0","activeUpsells":"boost","digitalRetail":"no","serviceBadges":"book an appointment","upgradeBoost":"yes","prequalificationLeadForm":"no","mediaTypes":"photo"},"pageType":"ad-details","loginStatus":"not logged in","detailViewType":"dv","showRemarketing":true,"build":"20220607.2","clientType":"Unknown","clientId":"7","clientIp":"173.34.48.237","requestId":"739220737093209869","googleRemarketingParams":{"pagetype":"Listings","prodid":"5_54907601","source":"Dealer","make":"Nissan","model":"Murano","minyear":2018,"maxyear":2018,"minprice":"23995","maxprice":"23995","condition":"Used","city":"Guelph"},"optimizely":{"expId":"none","varId":"none"}});
+        }
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>
+        Trader.initGoogleTagManager = function () {
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-K7JHZJ');
+        }
+    </script>
+    <!-- End Google Tag Manager -->
+    
+
+    
+ 
+<script>
+  
+    var Trader = Trader || {};
+    
+    Trader.setUniqueUserId = function () {
+        if (window.localStorage && window.localStorage.getItem("at_uid") === null) {
+            window.localStorage.setItem("at_uid", "c356f080-b59e-4a21-9488-c46464bc8128");
+        }
+    }
+</script>
+ 
+    
+    <script>
+    var Trader = Trader || {};
+</script>
+
+<script src="/bundles/header-scripts-prod.be9d14d6.js"></script>
+<script>
+    try {
+
+        Trader.initDataLayer();
+        Trader.initGoogleTagManager();
+        Trader.setUniqueUserId();
+    } catch (e) {
+        console.error(e);
+    }
+</script>
+
+
+
+    
+
+<input type="hidden" id="experiment">
+<input type="hidden" id="optVariation">
+<input type="hidden" id="deviceType" value="Desktop">
+<input type="hidden" id="pageType" value="VDP">
+<input type="hidden" id="isEnglish" value="en-ca">
+<input type="hidden" id="isExperimentOnMobile" value="false">
+<input type="hidden" id="optimizelyCulture" value="EN">
+<input type="hidden" id="vehicleType" value="PV">
+<input type="hidden" id="vehicleStatus" value="Used">
+<input type="hidden" id="sellerType" value="Dealer">
+<input type="hidden" id="tablet" value="false">
+
+
+    <script src="https://cdn.optimizely.com/js/11085769837.js"></script>
+    <script src="https://cdn.optimizely.com/datafiles/QAcf8t2Y6C3uCcB6QtKdMs.json/tag.js"></script>
+<script src="/bundles/optimizely-sdk-prod.52434e77.js"></script>
+
+
+
+<script>
+    var Trader = Trader || {};
+    var loadDeferredStyles = function (id) {
+        var addStylesNode = document.getElementById(id);
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement);
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var initLoadDeferredStyles = function (id) {
+        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) {
+            raf(function () { window.setTimeout(loadDeferredStyles(id), 0); });
+        } else {
+            window.addEventListener('load', loadDeferredStyles(id));
+        }
+
+    }
+</script>
+<link href="/bundles/bootstrap.7a5a31dc.css" rel="preload" as="style" /> 
+<link href="/bundles/bootstrap.7a5a31dc.css" rel="stylesheet" />
+<link href="/bundles/hulk.5f079b9a.css" rel="preload" as="style" /> 
+<link href="/bundles/hulk.5f079b9a.css" rel="stylesheet" />
+
+<link href="/bundles/trader-fawesome-icons.2301a127.css" rel="preload" as="style" /> 
+<link href="/bundles/trader-fawesome-icons.2301a127.css" rel="stylesheet" />
+
+
+<link href="/bundles/header.8580e66b.css" rel="preload" as="style" /> 
+<link href="/bundles/header.8580e66b.css" rel="stylesheet" />
+<link href="/bundles/main-shared.5d2be36c.css" rel="preload" as="style" /> 
+<link href="/bundles/main-shared.5d2be36c.css" rel="stylesheet" />
+
+
+
+<link href="/bundles/deferredStyles.b0e28fde.css" rel="stylesheet"  media="none" onload="if (media != 'all') media = 'all'"/>
+    
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "AutoTrader.ca",
+        "url": "https://www.autotrader.ca/",
+        "logo": "https://www.autotrader.ca/Images/SVG/en-CA/autotrader-logo.svg",
+        "sameAs": [
+            "https://www.facebook.com/AutoTrader.ca",
+            "https://www.instagram.com/autotrader_ca/",
+            "https://twitter.com/autotrader_ca",
+            "https://www.youtube.com/channel/UC0NV63T5Uj_Gh8CoZ6UcIfQ"
+        ]
+    }
+</script>
+    
+    <title>2018 Nissan Murano SV - Nav - Backup Cam - Sunroof - Heated Seats - Guelph</title>
+    <link rel="canonical" href="https://www.autotrader.ca/a/nissan/murano/guelph/ontario/5_54907601_on20071119121715952/" />
+    <meta name="description" content="
+With almost 25 years of experience in Guelph, Riverside Auto Sales is a family business that has the knowledge to bring you a fun and hassle free experience.
+Our expert finance team will work hard to secure you the best possible rate regardless of your credit situation.
+Looking to trade in your current vehicle?
+Thats great! We love trade ins, and our expert appraisers are always on duty.
+A free Carfax report is always available for every vehicle and a full safety and professional detailing is done on every vehicle prior to delivery.
+We offer a 30 day or 1500 km powertrain warranty on every vehicle.
+Extended warranty is always available for purchase.
+All prices shown are excluding taxes and licensing fees.
+Stop in today and let our expert sales team help get you on the path to your next new-to-you vehicle. " />
+    <meta property="og:title" content="2018 Nissan Murano SV - Nav - Backup Cam - Sunroof - Heated Seats - Guelph" />
+    <meta property="og:description" content="
+With almost 25 years of experience in Guelph, Riverside Auto Sales is a family business that has the knowledge to bring you a fun and hassle free experience.
+Our expert finance team will work hard to secure you the best possible rate regardless of your credit situation.
+Looking to trade in your current vehicle?
+Thats great! We love trade ins, and our expert appraisers are always on duty.
+A free Carfax report is always available for every vehicle and a full safety and professional detailing is done on every vehicle prior to delivery.
+We offer a 30 day or 1500 km powertrain warranty on every vehicle.
+Extended warranty is always available for purchase.
+All prices shown are excluding taxes and licensing fees.
+Stop in today and let our expert sales team help get you on the path to your next new-to-you vehicle. " />
+    <meta property="og:image" content="https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/0a62d073-9930-4e4e-8cc6-15dcf2ec2415.jpg-1024x786" />
+    <meta property="og:type" content="product" />
+    <meta property="og:url" content="https://www.autotrader.ca/a/nissan/murano/guelph/ontario/5_54907601_on20071119121715952/" />
+    <meta property="fb:app_id" content="162313827531727" />
+    <meta property="og:site_name" content="AutoTrader.ca" />
+
+    <script type='text/javascript'>
+        var slotHulk;
+        var googleDfpManager;
+            window['prebidAdUnits']=[{"HtmlDivId":"SRP_Billboard_1","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969145017b7b177bf317d470130011"}},{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969590017b7b17800517d471350011"}},{"bidder":"appnexus","parameters":{"placementId":"22394929","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"appnexus","parameters":{"placementId":"22394930","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701300","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701303","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"Z77yOBG967LtLr9zxH1xxY0G","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"7A8nJpKg24xYHOIBchXtVK11","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159422,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159420,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946645","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946646","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_Billboard_2","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969145017b7b177bf317d470130011"}},{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969590017b7b17800517d471350011"}},{"bidder":"appnexus","parameters":{"placementId":"22394929","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"appnexus","parameters":{"placementId":"22394930","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701300","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701303","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"Z77yOBG967LtLr9zxH1xxY0G","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"7A8nJpKg24xYHOIBchXtVK11","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159422,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159420,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946645","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946646","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_Billboard_3","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969145017b7b177bf317d470130011"}},{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969590017b7b17800517d471350011"}},{"bidder":"appnexus","parameters":{"placementId":"22394929","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"appnexus","parameters":{"placementId":"22394930","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701300","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701303","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"Z77yOBG967LtLr9zxH1xxY0G","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"7A8nJpKg24xYHOIBchXtVK11","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159422,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159420,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946645","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946646","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_Billboard_4","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969145017b7b177bf317d470130011"}},{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969590017b7b17800517d471350011"}},{"bidder":"appnexus","parameters":{"placementId":"22394929","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"appnexus","parameters":{"placementId":"22394930","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701300","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701303","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"Z77yOBG967LtLr9zxH1xxY0G","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"7A8nJpKg24xYHOIBchXtVK11","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159422,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159420,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946645","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946646","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_HPU-BigBox_1","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d475400012"}},{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394934","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701321","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"DgCB1xE09VKnasR0uDgTinNN","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":2159428,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946650","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_2","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_3","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_4","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_5","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_6","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_7","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_8","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_9","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_BigBox_10","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a96984c017b7b1777af17d4722f0011"}},{"bidder":"appnexus","parameters":{"placementId":"22394931","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701316","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"W6gbtQS3nbMdzB4znIFDsbDD","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":532174,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946647","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"SRP_DEAC_Events_1","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a969145017b7b177bf317d473380012"}},{"bidder":"appnexus","parameters":{"placementId":"22394932","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701324","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"PybOgrep2sew5Tfu4NE3TxPR","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":2159424,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946648","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"VDP_Leaderboard","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969145017b7b177bf317d470130011"}},{"bidder":"appnexus","parameters":{"placementId":"22394929","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701300","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"Z77yOBG967LtLr9zxH1xxY0G","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159420,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946645","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"VDP_Gallery_Leaderboard","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969145017b7b177bf317d470130011"}},{"bidder":"appnexus","parameters":{"placementId":"22394929","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701300","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"Z77yOBG967LtLr9zxH1xxY0G","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":2159420,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946645","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"VDP_BigBox","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969590017b7b17800517d46e020010"}},{"bidder":"appnexus","parameters":{"placementId":"22394927","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701223","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"jmK864iCU8I6YeXopulpKi5I","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":532168,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946643","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"VDP_Gallery_BigBox","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a96984c017b7b1777af17d0bfbb000c","pos":"8a969590017b7b17800517d46e020010"}},{"bidder":"appnexus","parameters":{"placementId":"22394927","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701223","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"jmK864iCU8I6YeXopulpKi5I","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113194","zoneId":532168,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946643","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]},{"HtmlDivId":"VDP_Gumstick","bids":[{"bidder":"onemobile","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":"8a969145017b7b177bf317d1bc40000e","pos":"8a969145017b7b177bf317d473380012"}},{"bidder":"appnexus","parameters":{"placementId":"22394932","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"ix","parameters":{"placementId":null,"publisherId":null,"siteId":"701324","zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"districtmDMX","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":"601044","memberid":"101326","dcn":null,"pos":null}},{"bidder":"districtm","parameters":{"placementId":"22473015","publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"sharethrough","parameters":{"placementId":null,"publisherId":null,"siteId":null,"zoneId":null,"accountId":null,"pkey":"PybOgrep2sew5Tfu4NE3TxPR","dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"rubicon","parameters":{"placementId":null,"publisherId":null,"siteId":"113200","zoneId":2159424,"accountId":16006,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}},{"bidder":"pubmatic","parameters":{"placementId":"3946648","publisherId":"160982","siteId":null,"zoneId":null,"accountId":null,"pkey":null,"dmxid":null,"memberid":null,"dcn":null,"pos":null}}]}];
+        //initialize the googleDfp manager
+        Trader.initGoogleDfpManager = function () {
+            if (googleDfpManager) return;
+            slotHulk = [];
+            googleDfpManager = new GoogleDfpManager(
+                new GoogleDfpBannerSet(
+                    [
+                    new GoogleDfpBannerTargeting('siteenvironment', ['www','test']),
+                    new GoogleDfpBannerTargeting('make', 'nissan'),
+                    new GoogleDfpBannerTargeting('model', 'murano'),
+                    new GoogleDfpBannerTargeting('year', '2018'),
+                    new GoogleDfpBannerTargeting('price', '23995'),
+                    new GoogleDfpBannerTargeting('fueltype', 'gas'),
+                    new GoogleDfpBannerTargeting('listing', 'dealer'),
+                    new GoogleDfpBannerTargeting('dealer', 'ON20071119121715952'),
+                    new GoogleDfpBannerTargeting('condition', 'used'),
+                    new GoogleDfpBannerTargeting('category', 'cars_trucks_suvs'),
+                    new GoogleDfpBannerTargeting('screensize', 'lg'),
+                    new GoogleDfpBannerTargeting('variation', ['none','none|none']),
+                    new GoogleDfpBannerTargeting('vdptype', 'regular_vdp'),
+                                    ],
+                                    [
+            new GoogleDfpBanner('Branded_Inventory',
+                            '/8544/autoTRADER/Cars/Details',
+                [],
+            [
+                        new GoogleDfpBannerTargeting('position', 'branded_inventory'),
+            ],
+                            false,
+                            true),
+            new GoogleDfpBanner('VDP_Leaderboard',
+                            '/8544/autoTRADER/Cars/Details',
+                [728,90],
+            [
+                        new GoogleDfpBannerTargeting('position', 'pos1'),
+            ],
+                            false,
+                            false),
+            new GoogleDfpBanner('VDP_Gallery_Leaderboard',
+                            '/8544/autoTRADER/Cars/DetailsGallery',
+                [728,90],
+            [
+                        new GoogleDfpBannerTargeting('position', 'pos1'),
+            ],
+                            false,
+                            false),
+            new GoogleDfpBanner('VDP_Gallery_BigBox',
+                            '/8544/autoTRADER/Cars/DetailsGallery',
+                [300,250],
+            [
+                        new GoogleDfpBannerTargeting('position', 'pos1'),
+            ],
+                            false,
+                            false),
+            new GoogleDfpBanner('VDP_BigBox',
+                            '/8544/autoTRADER/Cars/Details',
+                [300,250],
+            [
+                        new GoogleDfpBannerTargeting('position', 'pos1'),
+            ],
+                            false,
+                            false),
+            new GoogleDfpBanner('VDP_DEAC_Events_OTL',
+                            '/8544/autoTRADER/Cars/Details',
+                [480,360],
+            [
+                        new GoogleDfpBannerTargeting('position', 'right'),
+            ],
+                            true,
+                            false),
+                    ],
+                    false,
+                'VDP',
+                    true
+                )
+            );
+        }
+
+</script>
+
+
+
+
+    
+    <meta content="en-ca" id="cultureName" />
+    <link href="/bundles/vdp-fuji-loading.7387f431.css" rel="preload" as="style" /> 
+<link href="/bundles/vdp-fuji-loading.7387f431.css" rel="stylesheet" />
+    <link href="/bundles/ng-vdp-fuji.509d9757.css" rel="preload" as="style" /> 
+<link href="/bundles/ng-vdp-fuji.509d9757.css" rel="stylesheet" />
+
+
+<link href="/bundles/signin.1bf42847.css" rel="stylesheet"  media="none" onload="if (media != 'all') media = 'all'"/>    
+</head>
+<body id="en-ca" class="desktop responsive">
+   
+    <input type="hidden" class="hidden" id="ssoAspxAuthToken" />
+    <input type="hidden" class="hidden" id="enableAmazonHBSubsequentRequestsPageBits" value="7"/>
+    <div class="hidden" id="env" data-prefix="" data-profileapiendpoint="https://tdrprofileapi.azurewebsites.net" data-requestid="d2e7f3dc-741b-4ae9-9c41-7fb3852cf2ca" data-delaybannerrefresh="-1">Prod</div>
+    <div id="wrapper">
+        <div class="container-fluid">
+
+
+            
+            
+
+
+
+
+<header>
+    
+    <nav class="navbar navbar-inverse" id="navbarMicrosites">
+        <div class="container">
+            
+            <div class="navbar-header">
+                
+                <div id="mobileMicrosites">
+                    <form>
+                        <div class="btn-group">
+                            <a class="btn dropdown-toggle btn-select" data-toggle="dropdown" href="#">Cars, Trucks &amp; SUVs <i class="far fa-chevron-down-header" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/" class="active">Cars, Trucks &amp; SUVs</a></li>
+                                <li><a href="/heavy_trucks" class="">Commercial / Heavy Trucks</a></li>
+                                <li><a href="/trailers" class="">Trailers</a></li>
+                                <li><a href="/rv" class="">RVs</a></li>
+                                <li><a href="/boats" class="">Boats</a></li>
+                                <li><a href="/watercraft" class="">Watercraft</a></li>
+                                <li><a href="/motorcycles_atvs" class="">Bikes &amp; ATVs</a></li>
+                                <li><a href="/snowmobiles" class="">Snowmobiles</a></li>
+                                <li><a href="/heavy_equipment" class="">Heavy Equipment</a></li>
+                                <li><a href="/farm_equipment" class="">Farm</a></li>
+                            </ul>
+                        </div>
+                        
+                                            </form>
+                </div>
+                <ul class="nav navbar-nav navbar-right mobile" id="languageToggle" style="display: none;">
+                    
+                    <li><a href="https://www.autohebdo.net/a/nissan/murano/guelph/ontario/5_54907601_on20071119121715952/?showcpo=ShowCpo&amp;ncse=no&amp;ursrc=boost&amp;orup=74_50_9270&amp;sprx=50" hreflang="fr-CA">FR</a></li>
+                </ul>
+            </div>
+            
+                <div class="collapse navbar-collapse" id="desktopMicrosites">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/" class="active">Cars, Trucks &amp; SUVs</a></li>
+                        <li><a href="/heavy_trucks" class="">Commercial / Heavy Trucks</a></li>
+                        <li><a href="/trailers" class="">Trailers</a></li>
+                        <li><a href="/rv" class="">RVs</a></li>
+                        <li><a href="/boats" class="">Boats</a></li>
+                        <li><a href="/watercraft" class="">Watercraft</a></li>
+                        <li><a href="/motorcycles_atvs" class="">Bikes &amp; ATVs</a></li>
+                        <li><a href="/snowmobiles" class="">Snowmobiles</a></li>
+                        <li><a href="/heavy_equipment" class="">Heavy Equipment</a></li>
+                        <li><a href="/farm_equipment" class="">Farm</a></li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+    
+    
+    <div class="collapsed" id="navbarSpacer"></div>
+    <nav class="navbar navbar-inverse" id="navbarPrimary">
+        <div class="container">
+            <div class="navbar-header ">
+
+
+
+                    <a class="hidden-md hidden-lg" id="headerBackBtn" href="/cars/nissan/murano/on/guelph/?rcp=15&amp;rcs=0&amp;srt=35&amp;prx=50&amp;prv=Ontario&amp;loc=Guelph&amp;hprc=True&amp;wcp=True">
+                        <i class="far fa-chevron-left-xs-backbutton-header" aria-hidden="true"></i>
+                        Back
+                    </a>
+                    <!-- Modal -->
+                    <div class="modal fade col-xs-12" id="socialMediaXS" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="socialMediaxs-title" id="exampleModalLabel">Share</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="col-xs-12 col-md-12 nopadding" style="margin: 0;">
+                                        <hr style="width: 50px; padding: 0; margin: 0; margin-left: 15px; border: solid 2px #CC0000;">
+                                        <hr style="width: 95%; padding: 0; margin: 0; margin-left: 15px;">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="social-media-icons-xs" class="col-xs-12 socialMedia-container-xs text-left">
+    <ul>
+        <li class="facebookLike col-xs-2 col-md-2 nopaddingLeft vdp-socialMedia-icons-div" style="overflow: visible;">
+            
+            <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.autotrader.ca%2Fa%2Fnissan%2Fmurano%2Fguelph%2Fontario%2F5_54907601_on20071119121715952%2F%3Fshowcpo%3DShowCpo%26ncse%3Dno%26ursrc%3Dboost%26orup%3D74_50_9270%26sprx%3D50" 
+               onclick="socialMediaShareAd(this.href, 'facebook', 600, 600); return false;">
+                <img src="/Images/SVG/VDP/share_facebook.svg" style="margin-right: 10px;" data-provider="facebook" />
+                <h3>Facebook</h3>
+            </a>
+        </li>
+
+        <li class="at_twitter twittermargin col-xs-2 col-md-2 nopaddingLeft vdp-socialMedia-icons-div">
+            <a href="https://twitter.com/share?text=I just found a great deal on @autoTRADER_ca, check it out!&url=https%3A%2F%2Fwww.autotrader.ca%2Fa%2Fnissan%2Fmurano%2Fguelph%2Fontario%2F5_54907601_on20071119121715952%2F%3Fshowcpo%3DShowCpo%26ncse%3Dno%26ursrc%3Dboost%26orup%3D74_50_9270%26sprx%3D50"
+               class="twitter-share-button" data-lang="en"
+               onclick="socialMediaShareAd(this.href, 'twitter', 400, 600); return false;">
+                <img src="/Images/SVG/VDP/share_twitter.svg" style="margin-right: 10px;" data-provider="twitter"/>
+                <h3>Twitter</h3>
+
+            </a>
+        </li>
+
+        <li class="col-xs-2 col-md-2 nopaddingLeft vdp-socialMedia-icons-div" onclick="openEmailAFriendXS()" style="cursor: pointer;">
+            <img src="/Images/SVG/VDP/share_mail_icon.svg" style="margin-right: 10px;" data-provider="email" />
+            <h3>Email to a Friend</h3>
+        </li>
+    </ul>
+                             
+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                <a class="navbar-brand" href="/" aria-label="logo">
+                    <div id="logo" class="at-logo"></div>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse left" id="mainNav">
+                
+                <ul class="nav navbar-nav navbar-contextual">
+                    <li>
+
+                        <a href="/buy-car-online" onclick="gtmManager.headerClickBuy()">
+                            Buy Online
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="/ico/sellmycar" onclick="gtmManager.headerClickSell();return true;">
+                            Sell My Car
+                            
+                            
+                        </a>
+                    </li>
+                    
+                    
+
+                      
+                     <li>
+
+                        <a href="/cars/?fuel=Electric%2CGas%2FElectric%20Hybrid&amp;hprc=True&amp;wcp=True&amp;iosp=True&amp;sts=New-Used&amp;inMarket=advancedSearch" onclick="gtmManager.headerClickBuy()">
+                            Shop Electric
+                            <span class="sellFreeTagContainer">
+                                <span class="newTag"></span>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li class="dropdown sub-dropdown newsReviews">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Reviews&nbsp;&amp;&nbsp;Advice&nbsp;
+                            <div class="dropdownIconContainer">
+                                <i class="expand-mobile" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu tooltipMenu">
+                            <li><a href="/editorial/">Editorial Homepage</a></li>
+                            <li><a href="/newsfeatures/">News &amp; Features</a></li>
+                                <li><a href="/newsfeatures/car-news/">Auto News</a></li>
+                                <li><a href="/newsfeatures/fun-stuff/">Car Culture</a></li>
+                                <li><a href="/newsfeatures/buying-selling-tips/">Buy / Sell / Own</a></li>
+                            <li><a href="/expert/">Expert Reviews</a></li>
+                            <li><a href="/reviews/">Owner Reviews</a></li>
+                                <li><a href="/research/">Vehicle Research</a></li>
+                                                        <li>
+                                <a href="/motorcycle-research/">Motorcycle Research</a>
+                            </li>
+                            <li>
+                                <a href="/editorial/awards/">Awards</a>
+                            </li>
+                                <li><a href="/consumer/price-index/">Car Price Index</a></li>
+                            <li><a href="/research/comparison/">Car Comparison Tool</a></li>
+                        </ul>
+                    </li>
+                    
+                                            <li>
+                            <a href="/ico/valuations/" onclick="gtmManager.headerClickValuations();return true;">What&#39;s My Car Worth?</a>
+                        </li>
+
+                    <!--Flash Sale-->
+                    
+                </ul>
+
+                
+            <ul class="nav navbar-nav navbar-right myGarage">
+                    <li class="dropdown sub-dropdown" id="signin-dropwdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Sign in
+                            <i class="far fa-chevron-down-dropdown-header angle-down-header desktop" aria-hidden="true"></i>
+                        </a>
+
+                        <ul class="dropdown-menu tooltipMenu">
+                            <li><a href="https://sellmycar.autotrader.ca/manage/index?lcid=2">Manage your Ad</a></li>
+                        </ul>
+
+                    </li>
+                
+                
+                <li><a id="languageSwitch" href="https://www.autohebdo.net/a/nissan/murano/guelph/ontario/5_54907601_on20071119121715952/?showcpo=ShowCpo&amp;ncse=no&amp;ursrc=boost&amp;orup=74_50_9270&amp;sprx=50" hreflang="fr-CA">FR</a></li>
+
+                
+            </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div class="login-modal-section">
+  <div id="login-modal-container" class="modal fade signInModal">
+    <div class="modal-vertical-align">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<script>
+  Trader.initSignInModal = function() {
+    if (window.addEventListener) {
+      window.addEventListener("message", receiveMessage, false);
+    } else if (window.attachEvent) {
+      window.attachEvent("onmessage", receiveMessage, false);
+    }
+
+    function receiveMessage(event) {
+      if (event.data !== null && event.data.toString().indexOf('{') != 0)
+        return;
+      try {
+        var data = JSON.parse(event.data.toString());
+        if (typeof data === "object") {
+          if (data.action === 'Redirect') {
+            document.location = data.parameters.location;
+          }
+        }
+      } catch (err) {
+      }
+    }
+
+    $('body').on('click',
+      '#lnkSsoSignIn',
+      function (e) {
+        e.preventDefault();
+        $('#login-modal-container').modal('show').find('.modal-content').load($(this).attr('href'));
+      });
+
+    $('#login-modal-container').on('hidden.bs.modal',
+      function (e) {
+          $(this).removeData('bs.modal');
+        });
+  }
+
+</script>
+    <div id="ssoModal" class="modal fade signInModal" role="dialog">
+    <div class="modal-vertical-align">
+        <div id="colorbox" class="modal-dialog ssoModalColorbox" role="dialog" tabindex="-1">
+            <div class="modal-content">
+                <a id="cboxClose" class="close" href="#" data-toggle="modal" data-target="#ssoModal" role="button"><span aria-hidden="true">x</span></a>
+                <div class="iframe-wrapper">
+                    <iframe id="ssoFrame" frameborder="0" scrolling="no" class="signin-iframe" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    Trader.initSSOModal = function() {
+            if (window.addEventListener) {
+                window.addEventListener("message", receiveMessage, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onmessage", receiveMessage, false);
+            }
+
+            function receiveMessage(event) {
+                if (!event || !event.data || event.data.toString().indexOf('{') !== 0)
+                    return;
+                try {
+                    var data = JSON.parse(event.data.toString());
+                    if (typeof data === "object") {
+                        if (data.action === 'Redirect') {
+                            document.location = data.parameters.location;
+                        }
+                    }
+                } catch (err) {
+                }
+            }
+
+        $('#ssoModal').on('shown.bs.modal', function () {
+            var attr = $('#ssoFrame').attr('src');
+            if (!attr) {
+                var returnUrl = (location.pathname + location.search);
+                var urlParams = new URLSearchParams(window.location.search);
+                var isFrmVal = 1;
+                var modalValue = urlParams.get('modal');
+
+                if (modalValue) {
+                    var res = modalValue.split(",");
+                    switch (res[0]) {
+                    case "Login":
+                        isFrmVal = 1;
+                        break;
+                    case "Register":
+                        isFrmVal = 2;
+                        break;
+                    case "ForgotPassword":
+                        isFrmVal = 3;
+                        break;
+                    case "ResetPassword":
+                        isFrmVal = 4;
+                        break;
+                    default:
+                        isFrmVal = 1;
+                        break;
+                    }
+                    urlParams.delete('modal');
+                }
+
+                urlParams.append('isfrm', isFrmVal);
+                
+                if (!urlParams.has('rurl')) {
+                    urlParams.append('rurl', returnUrl);
+                }
+                
+                    
+                $('#ssoFrame').attr('src', 'https://' + window.location.host + "/signin/?" + urlParams.toString());
+                //$('#ssoFrame').attr('src', 'https://' + window.location.host + "/signin/?rurl=" + encodeURIComponent(returnUrl));
+                    
+
+            }
+        });
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('modal') != null) {
+                $("#ssoModal").modal('show');
+            }
+        }
+    }
+
+</script>
+    <script>
+        $(document).ready(function () {
+            new OpenInApp().checkDevice();
+        });
+
+
+    </script>
+    <script async="async" type="text/javascript">
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('modal') != null) {
+                $("#ssoModal").modal('show');
+            }
+        }
+
+    </script>
+    
+
+</header>
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    // render the negotiated content for ng vdp data
+    if (!window['ngVdpModel']) {
+        window['ngVdpModel'] = {"currentCulture":"en","deepLinkSavedSearch":{"savedSearch":{"id":"6bf18d47-7be2-4977-ba88-3e0b8451754b","query":"/cars/nissan/murano/2018/on/guelph/?rcp=0&rcs=0&srt=0&prx=100&prv=Ontario&hprc=False&wcp=False&sts=New-Used","title":"2018 Nissan Murano for sale in Guelph","isMre":false,"type":0,"sourceId":0},"savedSearchCriteria":{"micrositeType":1,"micrositeCulture":"en-CA","location":{"latitude":43.539291,"longitude":-80.315536},"provinceAbbreviation":"ON","city":"Guelph","proximity":100,"adStatus":[1,2],"adType":[1,2],"makes":["Nissan"],"models":["Murano"],"cpoStatus":0,"sortBy":0,"yearRange":{"start":2018,"end":2018},"cashDown":0.0,"tradeIn":0.0,"skip":0,"top":0,"searchCriteriaType":0,"showQaAd":false}},"highlights":{"mileage":"142,825 km","transmission":"CVT","drivetrain":"AWD","items":["Navigation System","Panoramic Sunroof","Leather Interior","Powertrain Warranty"]},"gallery":{"items":[{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/0a62d073-9930-4e4e-8cc6-15dcf2ec2415.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/0a62d073-9930-4e4e-8cc6-15dcf2ec2415.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/855212fa-fc65-4b2a-94e5-20db7ca7196d.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/855212fa-fc65-4b2a-94e5-20db7ca7196d.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/317d985c-e6a9-460a-8b28-4f9918438f6c.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/317d985c-e6a9-460a-8b28-4f9918438f6c.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/484a077e-ccd8-4c49-a9eb-c6289a8f35c6.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/484a077e-ccd8-4c49-a9eb-c6289a8f35c6.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/3719c539-de86-4c27-8ba9-d91e748641e9.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/3719c539-de86-4c27-8ba9-d91e748641e9.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/e5194aad-f48c-47d1-8cd6-ed56fb6ebd0c.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/e5194aad-f48c-47d1-8cd6-ed56fb6ebd0c.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/55afd723-2ee2-4a4d-b3ae-6780dc4d48fa.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/55afd723-2ee2-4a4d-b3ae-6780dc4d48fa.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/5891fea6-014c-488a-b582-47679eca01e9.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/5891fea6-014c-488a-b582-47679eca01e9.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/41b7ce4e-5630-45cb-a4d3-56ebaf724f23.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/41b7ce4e-5630-45cb-a4d3-56ebaf724f23.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/2b83776e-aa2c-46d1-a5e7-5d8c00d8568f.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/2b83776e-aa2c-46d1-a5e7-5d8c00d8568f.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/fe02d9d9-87a5-4b3f-8300-173f99980e44.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/fe02d9d9-87a5-4b3f-8300-173f99980e44.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a71095a9-fb96-440d-952d-16af5c56ce70.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a71095a9-fb96-440d-952d-16af5c56ce70.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/338dcaf7-6454-48c5-a66d-514d20323902.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/338dcaf7-6454-48c5-a66d-514d20323902.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/469a1bc2-c23e-4902-9844-8a89801a62bc.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/469a1bc2-c23e-4902-9844-8a89801a62bc.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/9359f3d4-bfbe-415f-b2f3-947cbbbc6129.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/9359f3d4-bfbe-415f-b2f3-947cbbbc6129.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/c0631552-1af9-4f4d-af2d-c67947c6a285.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/c0631552-1af9-4f4d-af2d-c67947c6a285.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/b2206f6f-6632-4f4d-8662-9cce300d709f.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/b2206f6f-6632-4f4d-8662-9cce300d709f.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/1a9aa6da-481a-427d-90e8-7906a67a1e2f.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/1a9aa6da-481a-427d-90e8-7906a67a1e2f.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/fa385bf8-7ec3-42be-b160-bd43eeaf6bdc.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/fa385bf8-7ec3-42be-b160-bd43eeaf6bdc.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a28f3bcf-3cc0-4870-8fa1-09992f100a0e.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a28f3bcf-3cc0-4870-8fa1-09992f100a0e.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/9ca68be1-ddfc-4c35-8f1f-0f7ff72a017e.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/9ca68be1-ddfc-4c35-8f1f-0f7ff72a017e.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a946b5a4-d25b-4822-8ce6-3d3a19d67610.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a946b5a4-d25b-4822-8ce6-3d3a19d67610.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a9e4fca3-5efa-45ae-99e3-2d0b11dcf29c.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/a9e4fca3-5efa-45ae-99e3-2d0b11dcf29c.jpg"},{"type":"Photo","galleryUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/39e55c66-46d6-4308-9c19-0db9c8bca01b.jpg-1024x786","photoViewerUrl":"https://tdrpmimages.azureedge.net/photos/import/202205/1706/2113/39e55c66-46d6-4308-9c19-0db9c8bca01b.jpg"}],"foreignId":"54907601","count":24,"enableGalleryExperiment3Production":false,"enableGallerySmallerDesign":true},"hero":{"make":"Nissan","model":"Murano","year":"2018","trim":"SV - Nav - Backup Cam - Sunroof - Heated Seats","vin":"5N1AZ2MH2JN142825","price":"23,995","location":"Guelph","mileage":"142,825 km","priceAnalysis":"GreatPrice","vehicleAge":"","priceAnalysisDescription":"$2,503 BELOW MARKET","status":"Used","stockNumber":"142825","carfax":"ViewCarFaxWithLead"},"adBasicInfo":{"adId":"5_54907601","adIdUnique":"5_54907601_boost","sourceId":"5","foreignId":"54907601","isPrivate":false,"isNew":false,"isNpv":false,"isCommercial":false,"make":"Nissan","model":"Murano","year":"2018","trim":"SV - Nav - Backup Cam - Sunroof - Heated Seats","price":"$23,995","category":"PassengerVehicles","pathBodyType":"3837041","splashBodyType":"wagon","microSite":"cars","showSplashPlus":false,"isMobielRequest":false,"isAmvic":false,"dealerCoId":"5-ON20071119121715952","dealerCoForeignId":"ON20071119121715952","dealerCoName":"RIVERSIDE AUTO","status":"Used","vin":"5N1AZ2MH2JN142825","stockNumber":"142825","odometer":"142825"},"paymentInformation":{"application":"Payment","province":"ON","adId":"5_54907601","language":"en-CA","isStandAlone":"false","paymentOptionsSettingsUrl":"https://payments.autotrader.ca/Payment/PaymentOptionsSettings/","platform":"Desktop","fbpPrice":"23995","fbpSellerTypeAndVehicleStatus":"dealer_used"},"ngIcoModel":{"enable":true,"application":"Ico","adId":"5-54907601","language":"en-CA","webApiUrl":"//ico.autotrader.ca/Ico/","platform":"Desktop","postalCode":"","funnel":"TradeIn","dealerForeignId":"ON20071119121715952","dealerName":"RIVERSIDE AUTO","icoDemo":false},"conditionAnalysis":{"options":["Powertrain Warranty"],"odometerCondition":"High","odometer":"142,825 KM","carfax":"ViewCarFaxWithLead"},"carInsurance":{"application":"Insurance","adId":"5_54907601","language":"en-ca","targetUrl":"","isStandAlone":false,"platform":"Desktop","make":"Nissan","model":"Murano","year":"2018","vin":"5N1AZ2MH2JN142825","combineWithFinance":false,"showWidgetOnTop":true,"placementId":"315891976","advertiseId":"510970300","micrositeText":"Cars, Trucks & SUVs","category":"PassengerVehicles"},"securePayment":{"isSecurePaymentAvailable":false,"securePaymentApiUrl":"https://sellmycar.autotrader.ca/SecurePayment/GetBuyNowLink","securePaymentLandingUrl":"https://sellmycar.autotrader.ca/securepayment/index"},"fuelEconomy":{"showModule":true,"fuelCity":"11.2","fuelHighway":"8.4","fuelCombined":"9.9","tankSize":0,"fuelCost":"126.1","yearlyMileage":20000,"yearlyFuelCost":2506,"showFuelEconomyDisclaimer":true,"dataLayerSectionName":"fuel economy","order":160,"navigationAnchorName":"vdp-fueleconomy-widget","navigationTitle":"Fuel Economy"},"carfax":{"carProofReportUrl":"https://vhr.carfax.ca/?id=ZwaK2pnKeZqxwQtnYptGE3C1QbxZF5r+","carProofMessage":"","carFaxMode":4,"showReportedNoAccidents":false,"showOneOwner":false,"showCarProofWidget":false},"ico":{"showIcoVdp":false,"icoConsumer":{"consumerId":"cef21e45-3f81-43ea-b6a9-b3bafc60cf92","firstName":null,"lastName":null,"emailAddress":null,"postalCode":""},"dealerId":"ON20071119121715952","dealerName":"RIVERSIDE AUTO","accuTradeIFrameBaseUrl":"https://trader.accu-trade.com/","dealerKey":"efb423a08ce5529d87580c04e9d0b383b8573c61","accuTradeApiBaseUrl":"https://perseus-api-production.accu-trade.com/api/","icoApiBaseUrl":"//ico.autotrader.ca/Ico/","adId":"5_54907601","icoFunnel":1,"dataLayerSectionName":"ico","order":40,"navigationAnchorName":"ico","navigationTitle":"Instant Cash Offer","icoDemo":false,"showIcoModal":false,"icoCovid":false},"salesLeadForm":{"testDriveSchedulerVisible":false,"makeAnOfferVisible":false,"tradeInAppraisalVisible":false,"showCannedMsg":true},"featureHighlights":{"showModule":true,"showAllOptions":true,"highlights":["Navigation System","Panoramic Sunroof","Leather Interior","Alloy Wheels","Rear View Camera","Sunroof"],"options":["All Wheel Drive","Traction Control","Power Windows","Air Conditioning","Heated Seats","Tinted Windows","Climate Control","Power Seat","Keyless Entry","Cruise Control","Power Mirrors","Power Locks","Leather Wrap Wheel","Anti-Lock Brakes (ABS)","Power-Assist Disc Brakes","Fog Lights","Intermittent Wipers","Passenger Airbag","Power Brakes","Power Steering","Child-Safety Locks","Reclining Seats","Trip Odometer","Cloth Interior","Rear Defroster","Console","Cup Holder","Center Arm Rest","AM/FM Stereo","Driver Side Airbag"],"dataLayerSectionName":"features","order":150,"navigationAnchorName":"vdp-options-widget","navigationTitle":"Features &"},"specifications":{"specs":[{"key":"Kilometres","value":"142,825 km"},{"key":"Status","value":"Used"},{"key":"Trim","value":"SV - Nav - Backup Cam - Sunroof - Heated Seats"},{"key":"Body Type","value":"Wagon"},{"key":"Engine","value":"V6 Cylinder Engine"},{"key":"Cylinder","value":"6"},{"key":"Transmission","value":"CVT"},{"key":"Drivetrain","value":"AWD"},{"key":"Stock Number","value":"142825"},{"key":"Fuel Type","value":"Gas"},{"key":"City Fuel Economy","value":"11.2L/100km"},{"key":"Hwy Fuel Economy","value":"8.4L/100km"}],"showMadeIn":false,"dataLayerSectionName":"specs","order":110,"navigationAnchorName":"vdp-specs-widget","navigationTitle":"Specs"},"dealerTrust":{"requestIsFromMobile":false,"dealerCompanyName":"RIVERSIDE AUTO","dealerCompanyFormattedName":"RIVERSIDE+AUTO","logoUrl":"https://tdrpmimages.azureedge.net/ppgphotos/ON20071119121715952/logo20120403161714115.jpg","logoResourceLocation":53,"phoneNumber":"1-888-264-2741","isPhoneMask":false,"dealerCompleteAddress":"600 ELMIRA RD. N, Guelph, ON","dealerAddress":"600 ELMIRA RD. N","cityProvinceName":"Guelph, ON","provinceName":"ON","enableAnnouncementMessageProvList":[""],"showAnnouncementMessage":false,"dealerReviewId":-1,"bulletPoints":["150+ vehicles in stock!","Over 20 years in business","We finance ALL credit types"],"otlDealerEvent":{"otlDealerEventTitle":"Dealership Event - Ends January 1, 0001","otlDealerEventImageUrl":"","enableOTLDealerBanner":true},"dealerLinks":[{"linkUrl":"/dealer/?rcp=0&rcs=0&srt=0&cosid=5&cofid=ON20071119121715952&inMarket=dealerInventory","title":"View all inventory","sellerSectionClientEventHandler":"vdpDataLayerManager.addDealerInventoryClickEvent();","dealerSectionClientEventHandler":"vdpDataLayerManager.addDealerInventoryClickEvent();","gaEvent":"gtm_ad_dealer_inventory_link_click","gaEventDefaultLabel":"vdp"},{"linkUrl":"https://www.riversideautosales.ca/?utm_source=autoTRADER&utm_medium=referral","title":"Dealer website","sellerSectionClientEventHandler":"vdpDataLayerManager.addDealerWebsiteClickEvent('seller section');","dealerSectionClientEventHandler":"vdpDataLayerManager.addDealerWebsiteClickEvent('dealer section');","gaEvent":"gtm_ad_dealer_link_click","gaEventDefaultLabel":"dealer section","iconName":"DealerWebSite"}],"googleMapUrl":"https://maps.google.com/maps?q=RIVERSIDE+AUTO+600+ELMIRA+RD.+N+Guelph+Ontario&ll=43.539291,-80.315536&z=16","navigationAnchorName":"vdp-dealer-widget","navigationTitle":"Dealer","dataLayerSectionName":"dealer info","isTextConnect":false,"order":180,"googleRating":4.1,"googleMapsLinkURL":"https://maps.google.com/?cid=7497331026941665698","showIco":false,"bestPriceAwardUrl":"","enableSoftLeadsCTAsFromLeadFormXS":false,"isVirtualDealer":false},"description":{"dataLayerSectionName":"additionalInfo","description":[{"description":"\nWith almost 25 years of experience in Guelph, Riverside Auto Sales is a family business that has the knowledge to bring you a fun and hassle free experience.\nOur expert finance team will work hard to secure you the best possible rate regardless of your credit situation.\nLooking to trade in your current vehicle?\nThats great! We love trade ins, and our expert appraisers are always on duty.\nA free Carfax report is always available for every vehicle and a full safety and professional detailing is done on every vehicle prior to delivery.\nWe offer a 30 day or 1500 km powertrain warranty on every vehicle.\nExtended warranty is always available for purchase.\nAll prices shown are excluding taxes and licensing fees.\nStop in today and let our expert sales team help get you on the path to your next new-to-you vehicle. "}],"isNpv":false,"isPv":true,"isDealer":true,"isPrivate":false,"order":100,"navigationAnchorName":"vdp-additionalInfo-widget","navigationTitle":"Description"},"priceAnalysis":{"priceAnalysisDescription":"This vehicle is <b>$2,503 BELOW MARKET (9%)</b>. It is compared to similar vehicles in the <b>Guelph</b> and adjacent area. It’s based on kilometres, year, make, model, trim, manufacturer certification, manufacturer packages, options, and much more.","averageMarketPrice":"$26,498","currentAskingPrice":"$23,995","currentAskingPricePosition":"GreatPricePosition3","priceEvaluation":"GreatPrice","dataLayerSectionName":"price analysis","order":120,"navigationAnchorName":"vdp-price-Analisys","navigationTitle":"Price Analysis"},"privateWarrantyLink":"","sellFunnelURLHost":"","remoteServices":{"hasUpsellDealerDelivery":false,"hasUpsellHomeTestDrive":false,"hasUpsellDigitalRetail":false,"showDigitalRetailModal":false,"hasLiveChat":false,"hasVirtualAppraisal":false,"hasOnlineReservation":false,"hasBookAnAppointment":true,"hasTryBeforeYouBuy":false,"hasMoneyBackGuarantee":false,"isOnlineSellerPlus":false},"dealerId":"ON20071119121715952","hasDealerEvent":false,"vdpPrequalWidget":{"visible":false,"autoLoad":false}};
+        window['ngVdpGtm'] = {"vehicle":{"adID":"5-54907601","adType":"dealer","car360Enabled":"no","category":"Cars, Trucks & SUVs","condition":"used","dealerID":"5-ON20071119121715952","financingPrice":"no","listingPosition":"boost","make":"Nissan","model":"Murano","price":"23995","priceAnalysis":"great price","priceHistory":"not used","province":"ON","rawLocation":"","strikethrough":"no","subprimeLeadForm":"no","testingDimension":"pageload","transparency":"yes","upgradeHL":"no","upgradeMobileBoost":"yes","upgradePL":"no","upgradePPL":"no","upgradeTA":"no","upgradeTopSpot":"no","upgradeXPL":"no","upgradeInline":"no","upgradeSwipePro":"no","vehicleSpecialist":"no","year":"2018","olympus":"no","ncse":"no","chatEnabled":"no","chatProvider":"none","latlong":"","carfax":"view with email","showInsuranceWidgetOnTop":"yes","totalPictures":"24","mainPictureCM":"no","cmPictures":"0","activeUpsells":"boost","digitalRetail":"no","serviceBadges":"book an appointment","upgradeBoost":"yes","prequalificationLeadForm":"no","mediaTypes":"photo"},"pageType":"ad-details","loginStatus":"not logged in","detailViewType":"dv","showRemarketing":true,"build":"20220607.2","clientType":"none","clientId":"-1","clientIp":"none","requestId":"none","googleRemarketingParams":{"pagetype":"Listings","prodid":"5_54907601","source":"Dealer","make":"Nissan","model":"Murano","minyear":2018,"maxyear":2018,"minprice":"23995","maxprice":"23995","condition":"Used","city":"Guelph"},"optimizely":{"expId":"none","varId":"none"}};
+        window['ngSearchCriterion'] = unescape('{\"address\":\"Guelph\",\"adStatus\":[1,2,3],\"adType\":[2,1],\"cpoStatus\":0,\"datalayerCpoStatus\":true,\"isCommercial\":false,\"isUniqueSearch\":true,\"keywords\":\"\",\"location\":{\"city\":{\"placeName\":\"Guelph, ON\",\"coordinates\":{\"latitude\":43.54594,\"longitude\":-80.25599},\"name\":\"Guelph\",\"province\":{\"abbreviation\":\"ON\",\"name\":\"Ontario\"},\"isCity\":true},\"confidence\":0.0},\"makes\":[\"Nissan\"],\"micrositeType\":1,\"models\":[\"Murano\"],\"pageNumber\":1,\"proximity\":50,\"skip\":0,\"top\":15,\"withPhotos\":true,\"withPrice\":true,\"hasNewAdStatus\":true,\"hasUsedAdStatus\":true,\"hasDamagedAdStatus\":true,\"hasAdTypeDealer\":true,\"hasAdTypePrivate\":true,\"sortBy\":35,\"inMarketType\":\"advancedSearch\",\"microsite\":{\"siteId\":2,\"micrositeType\":1,\"culture\":\"en-CA\",\"landingUrlSegment\":\"cars\",\"searchResultsUrlSegment\":\"cars\",\"displayText\":\"Cars, Trucks \u0026 SUVs\",\"shortName\":\"Car\",\"shortNameGender\":\"\",\"requiresType\":false,\"requiresSubType\":false,\"category2Ids\":[7,9,10,11],\"disableSeoModel\":false,\"defaultWithPrice\":true,\"defaultWithPhotos\":true,\"isNpv\":false,\"displayNeuvesInNpvPopularLinks\":false},\"phoneNumber\":\"\",\"isDefaultAddress\":false,\"cashDown\":0.0,\"tradeIn\":0.0,\"withShoppingExperience\":\"no\",\"searchCriteriaType\":0,\"showQaAd\":false}');
+        window['ngSearchUrl'] = unescape('/cars/nissan/murano/on/guelph/?rcp=15\u0026rcs=0\u0026srt=35\u0026prx=50\u0026prv=Ontario\u0026loc=Guelph\u0026hprc=True\u0026wcp=True');
+        window['ngDataHostName'] = document.getElementById('env').dataset.prefix;
+    }
+</script>
+
+<a id="chatBubble"></a>
+<div id="liveChatButton">
+
+</div>
+
+
+
+
+<script src="/bundles/Helpers-bootstrap_v337.min-prod.45a62428.js"></script>
+
+
+<script src="/bundles/ng-vdp-synced-prod.bf10b55c.js" onload="InitTraderNgVdp.Init()"></script>
+
+
+<div id="bannerNationalWrapper">
+    <div class="banner-national-wrapper">
+        <div id="bannerDfpvdp" class="col-md-12 text-center nopadding bannerDfpvdp">
+    <!-- Beginning Async AdSlot 1 for Ad unit autoTRADERMDot/Details  ### size: [[320,50]] -->
+    <div id='VDP_Gumstick' class="js-google-dfp">
+    </div>
+</div>
+
+
+    </div>
+</div>
+
+
+
+<div id="vdpContainer"
+     class="container container-main"
+     data-adid="5_54907601"
+     data-fdmid="74907601"
+     data-postalcode="N1K 1C5"
+     data-adidunique="5_54907601_boost"
+     data-vehicle-category="PassengerVehicles">
+    <app-root-vdp-fuji current-culture="en-ca" is-trader-mobile="false"></app-root-vdp-fuji>
+
+    
+
+    <div id="loadingGhost">
+        <div id="mobileLoading" class="vdp-loading">
+            <img class="ghost-image" src="/Images/Pages/VdpFuji/ghost-image-lg.svg" onerror="src = '/Images/Pages/VdpFuji/ghost-image-lg.svg'">
+            <div class="hero-ghost">
+                <div class="ghost-block">
+                    <div class="ghost-text"></div>
+                    <div class="ghost-text width-lg"></div>
+                    <div class="ghost-text width-md"></div>
+                </div>
+                <div class="ghost-block">
+                    <div class="ghost-text"></div>
+                    <div class="ghost-text width-lg"></div>
+                    <div class="ghost-text width-md"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="desktopLoading" class="vdp-loading">
+            <div class="banner-ghost container"></div>
+
+            <div class="hero-ghost container">
+                <div class="hero-title-wrapper-ghost">
+                    <div class="back-ghost">
+                        <i class="fal fa-arrow-left-vdp"></i>
+                    </div>
+                    <div class="hero-title-ghost">
+                        <div class="ghost-text width-lg"></div>
+                        <div class="ghost-text width-md height-sm"></div>
+                    </div>
+                </div>
+                <div class="price-ghost">
+                    <div class="ghost-text width-lg"></div>
+                    <div class="ghost-text width-md height-sm"></div>
+                </div>
+            </div>
+
+            <div class="main container no-padding">
+                <div class="gallery-ghost container-fluid row no-padding">
+                    <div class="img-container col-xs-12 col-sm-9">
+                        <img class="ghost-image-lg" src="/Images/Pages/VdpFuji/ghost-image-lg.svg">
+                    </div>
+                    <div class="ghost-thumbnails-container col-sm-3 hidden-xs no-padding">
+                        <img class="ghost-thumbnails" src="/Images/Pages/VdpFuji/ghost-image-thumbnail.svg">
+                        <img class="ghost-thumbnails" src="/Images/Pages/VdpFuji/ghost-image-thumbnail.svg">
+                        <img class="ghost-thumbnails" src="/Images/Pages/VdpFuji/ghost-image-thumbnail.svg">
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="dealer-info-ghost">
+                        <div class="dealer-logo-ghost"></div>
+                        <div class="dealer-text-ghost">
+                            <div class="ghost-text width-lg"></div>
+                            <div class="ghost-text width-md"></div>
+                        </div>
+                        <div class="ghost-text width-lg text-center bottom"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+    <div class="container main-container">
+        <div class="container">
+                <div id="breadcrumb" class="col-xs-12">
+        <span id="spanBreadCrumbMainContainer" itemscope itemtype="http://schema.org/BreadcrumbList">
+             <ol class="srp-breadcrumbs">
+                    <li>
+                        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" data-ajax="false" href="/cars/?srt=35&amp;cty=Guelph&amp;hprc=True&amp;wcp=True">
+                                <span itemprop="name">Cars, Trucks &amp; SUVs</span>
+                            </a>
+                            <meta itemprop="position" content="1"/>
+                        </span>
+                    </li>
+                    <li>
+                        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" data-ajax="false" href="/cars/nissan/?srt=35&amp;cty=Guelph&amp;hprc=True&amp;wcp=True">
+                                <span itemprop="name">Nissan</span>
+                            </a>
+                            <meta itemprop="position" content="2"/>
+                        </span>
+                    </li>
+                    <li>
+                        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" data-ajax="false" href="/cars/nissan/murano/?srt=35&amp;cty=Guelph&amp;hprc=True&amp;wcp=True">
+                                <span itemprop="name">Murano</span>
+                            </a>
+                            <meta itemprop="position" content="3"/>
+                        </span>
+                    </li>
+                <li> Vehicle details</li>
+            </ol>
+        </span>
+
+    </div>
+
+        </div>
+    </div>
+
+
+
+
+
+            
+            
+
+<div id="dvMarketingOptIn" class="footer-marketing-opt-in hidden">
+    <div class="container">
+        <div class="row">
+            <div class="hidden-xs col-md-10 col-lg-12">
+                <div class="not-subscribed">
+                    <div class="optin-label">Subscribe for the latest car reviews, listings, products and more right in your inbox.</div>
+                    <div class="group optin-input">
+                        <input type="text" id="txtOptInEmailFooter" class="email-input" />
+                        <label id="marketingOptInPlaceholderLabel" for="txtOptInEmailFooter" class="group-label">Your email address</label>
+                        <label id="marketingOptInEmailLabel" for="txtOptInEmailFooter" class="floating-label"></label>
+                        <button type="button" id="btnMarketingOptInFooter" class="btn trader-reset">
+                            Subscribe
+                        </button>
+                    </div>
+                    <div id="dvSaveSearchTerms" class="terms-and-conditions" style="display:none;">By clicking 'Subscribe', I agree to receive communications from AutoTrader.  I can unsubscribe at anytime.  I also agree to the <a target="_blank" href="/privacy-statement#terms">Terms of Use</a> and <a target="_blank" href="/privacy-statement">Privacy Policy</a>.</div>
+                </div>
+                <div class="subscribed hidden">
+                    <div class="subcription-success-header">
+                        Subscription complete!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 logo-social-col">
+                <div class="footer-logo">
+                    <a href="/" aria-label="Trader Logo Badge">
+                        <div class="at-logo lazyFooter"></div>
+                    </a>
+                </div>
+                <div class="social-links-container">
+                    <ul>
+                        <li>
+                            <a id="hlnkSocialFacebook" class="sharer icoFacebook" onclick="gtmManager.footerClickSocialNetwork('facebook'); return true;" href="https://www.facebook.com/AutoTrader.ca" target="_blank" rel="noopener" aria-label="Facebook">
+                                <i class="fab fa-facebook-brand-footer fa-facebook-f-footer"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="hlnkSocialTwitter" class="sharer icoTwitter" onclick="gtmManager.footerClickSocialNetwork('twitter'); return true;" href="https://twitter.com/autotrader_ca" target="_blank" rel="noopener" aria-label="Twitter">
+                                <i class="fab fa-twitter-brand-footer fa-twitter-f-footer"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="hlnkSocialYouTube" class="sharer icoYouTube" onclick="gtmManager.footerClickSocialNetwork('youtube'); return true;" href="https://www.youtube.com/channel/UC0NV63T5Uj_Gh8CoZ6UcIfQ" target="_blank" rel="noopener" aria-label="YouTube">
+                                <i class="fab fa-youtube-brand-footer fa-youtube-f-footer"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="app-store-badges">
+                    <a id="lnkAndroidButton" onclick="gtmManager.footerClickGetMobileApp('android');return true;" href="https://play.google.com/store/apps/details?id=ca.autotrader.userapp" target="_blank" rel="noopener">
+                        <div class="app-badge android-badge lazyFooter"></div>
+                    </a>
+                    <a id="lnkAppleButton" onclick="gtmManager.footerClickGetMobileApp('iOS'); return true;" href="http://itunes.apple.com/ca/app/autotrader.ca-new-used-cars/id368660809?mt=8" target="_blank" rel="noopener">
+                        <div class="app-badge apple-badge lazyFooter"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden-xs col-sm-4 col-md-3 footer-links">
+                <h3>About Us</h3>
+                <ul id="aboutUsLinkContainer">
+                    <li><a href="http://go.trader.ca/" target="_blank" rel="noopener">TRADER Corporation</a></li>
+                    <li><a href="http://careers.trader.ca/" target="_blank" rel="noopener">Careers</a></li>
+                    <li><a href="/privacy-statement">Privacy Policy</a></li>
+                </ul>
+
+                <h3>Dealer Services</h3>
+                <ul id="dealerServicesLinkContainer">
+
+                    <a href="/dealer/signup/" target="_blank" class="dealer_service_link">
+
+                        <div>Marketplace</div>
+
+                        <div>Dealership Website</div>
+
+                        <div>Digital Marketing</div>
+
+                        <div>Inventory Management</div>
+
+                    </a>
+
+                </ul>
+            </div>
+
+
+            <div class="hidden-xs col-sm-4 col-md-3 footer-links">
+                <h3>Resources</h3>
+                <ul id="resourcesLinkContainer">
+                    <li><a href="/mobile/">Mobile Apps</a></li>
+                    <li><a href="/research/">Vehicle Research</a></li>
+                    <li><a href="/motorcycle-research/">Motorcycle Research</a></li>
+                    <li><a href="/reviews/">Owner Reviews</a></li>
+                    <li><a href="/dealer/dealerfinder/DealerFinder.aspx">Car Dealer Locator</a></li>
+                    <li><a href="/car-buying-and-selling-tips.aspx">Car Buying &amp; Selling Tips</a></li>
+                    <li><a href="/FraudProtectionTips">Fraud Protection Tips</a></li>
+                    <li><a href="/search/AdCenterLocator.aspx">Ad Centre Locator</a></li>
+                    <li><a href="/cars/" onclick="footerUserdCarsUrlAppendParam(event)">Used Cars in Canada</a></li>
+                    <li><a href="/cpo">Compare CPO</a></li>
+                </ul>
+            </div>
+
+            <div class="hidden-xs col-sm-4 col-md-3 footer-links">
+                <h3>Partners</h3>
+                <ul id="partnersLinkContainer">
+                            <li><a href="http://www.autos.ca" target="_blank" rel="noopener">Autos.ca</a></li>
+                         <li><a href="http://www.autohebdo.net">AutoHebdo.net</a></li>
+                    </ul>
+
+                <h3>Customer Support</h3>
+                <ul id="customerSupportLinkContainer">
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/general/info/ContactUs.aspx">Feedback &amp; Comments</a></li>
+                    <li><a href="/search/FindMyAd.aspx">Find my Ad</a></li>
+                    <li><a href="http://preferences-mgr.truste.com/?pid=trader01&amp;amp;aid=atraderpub01&amp;amp;type=atrader" target="_blank" rel="noopener">AdChoices</a></li>
+                    <li><a href="/general/info/ContactUs.aspx">Contact Us</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="copyrightContainer">
+        <div class="row">
+            <div class="copyright text-center">
+                <span id="lblCopyright">&copy; 2022 TRADER Corporation. All rights reserved. All other trademarks are the property of their respective owners. </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var footerUserdCarsUrlAppendParam = function (e) {
+        if (e && e.currentTarget) {
+            const href = e.currentTarget.getAttribute("href");
+            if (href) {
+                location.href = href + "?inMarket=usedCarsInCanada";
+                e.preventDefault();
+            }
+        }
+    }
+</script>
+
+
+
+            <!-- cookie banner-->
+<link href="/bundles/cookiebanner.0085a8c8.css" rel="preload" as="style" /> 
+<link href="/bundles/cookiebanner.0085a8c8.css" rel="stylesheet" />
+
+<div id="cookie-banner" class="container-fluid cookie-banner">
+    <div class="banner-container">
+        <div class="row margin-24">
+
+            <div class="bold-font">Cookie Settings</div>
+
+            <div class="margin-top-8">
+                <div class="col-lg-10 col-md-10 col-sm-10 no-padding">
+
+                    We use cookies and similar technologies to personalize your experience with Trader, vehicle manufacturers and vendors and for our general marketing purposes. We recently updated our Privacy Policy so please review it 
+                    <a target="_blank" href="/general/info/privacy.aspx" class="anchor-color">here.</a>
+                    <span class="bold-font"> By proceeding to use the site you consent to the terms of the privacy policy.</span>
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 no-padding margin-top-16">
+                    <button class="close-button" onclick="new CookieBanner().showHideCookiebanner('cookie-banner',false)"> Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var cookieBanner = new CookieBanner();
+   // debugger;
+    if (!cookieBanner.getCookie("cbnr")) {
+        cookieBanner.setCookie('cbnr', 1, 365);
+        cookieBanner.showHideCookiebanner("cookie-banner", true);
+    }
+
+    window.onbeforeunload = function () {
+      
+        let el = document.getElementById("cookie-banner");
+        if (el) {
+            var style = window.getComputedStyle(el);
+            if (style.display !== 'none') {
+                window['dataLayer'].push({
+                    "event": "gtm_cookie_banner",
+                    "eventLabel": "go to another page"
+                })
+            }
+        }
+
+        return undefined;
+
+    }
+
+</script>        </div>
+    </div>
+    
+    <script src="/bundles/ng-vdp-fuji-polyfills-es5-prod.a99aac74.js" nomodule ></script>
+
+<script src="/bundles/ng-vdp-fuji-polyfills-prod.920c1dd7.js" async="async"></script><script src="/bundles/ng-vdp-fuji-runtime-prod.441a68d6.js" async="async"></script><script src="" async="async"></script><script src="" async="async"></script><script src="/bundles/ng-vdp-fuji-main-prod.3c120493.js" async="async"></script><script src="/bundles/ng-vdp-trader_modal-prod.c95957bf.js" async="async"></script><script src="/bundles/ng-vdp-jwPlayer-prod.35482152.js" async="async"></script>
+
+
+
+        <!-- begin usabilla live embed code -->
+        <script type="text/javascript">
+                    /*{literal}<![CDATA[*/window.lightningjs || function (c) { function g(b, d) { d && (d += (/\?/.test(d) ? "&" : "?") + "lv=1"); c[b] || function () { var i = window, h = document, j = b, g = h.location.protocol, l = "load", k = 0; (function () { function b() { a.P(l); a.w = 1; c[j]("_load") } c[j] = function () { function m() { m.id = e; return c[j].apply(m, arguments) } var b, e = ++k; b = this && this != i ? this.id || 0 : 0; (a.s = a.s || []).push([e, b, arguments]); m.then = function (b, c, h) { var d = a.fh[e] = a.fh[e] || [], j = a.eh[e] = a.eh[e] || [], f = a.ph[e] = a.ph[e] || []; b && d.push(b); c && j.push(c); h && f.push(h); return m }; return m }; var a = c[j]._ = {}; a.fh = {}; a.eh = {}; a.ph = {}; a.l = d ? d.replace(/^\/\//, (g == "https:" ? g : "http:") + "//") : d; a.p = { 0: +new Date }; a.P = function (b) { a.p[b] = new Date - a.p[0] }; a.w && b(); i.addEventListener ? i.addEventListener(l, b, !1) : i.attachEvent("on" + l, b); var q = function () { function b() { return ["<head></head><", c, ' onload="var d=', n, ";d.getElementsByTagName('head')[0].", d, "(d.", g, "('script')).", i, "='", a.l, "'\"></", c, ">"].join("") } var c = "body", e = h[c]; if (!e) return setTimeout(q, 100); a.P(1); var d = "appendChild", g = "createElement", i = "src", k = h[g]("div"), l = k[d](h[g]("div")), f = h[g]("iframe"), n = "document", p; k.style.display = "none"; e.insertBefore(k, e.firstChild).id = o + "-" + j; f.frameBorder = "0"; f.id = o + "-frame-" + j; /MSIE[ ]+6/.test(navigator.userAgent) && (f[i] = "javascript:false"); f.allowTransparency = "true"; l[d](f); try { f.contentWindow[n].open() } catch (s) { a.domain = h.domain, p = "javascript:var d=" + n + ".open();d.domain='" + h.domain + "';", f[i] = p + "void(0);" } try { var r = f.contentWindow[n]; r.write(b()); r.close() } catch (t) { f[i] = p + 'd.write("' + b().replace(/"/g, String.fromCharCode(92) + '"') + '");d.close();' } a.P(2) }; a.l && setTimeout(q, 0) })() }(); c[b].lv = "1"; return c[b] } var o = "lightningjs", k = window[o] = g(o); k.require = g; k.modules = c }({});
+                window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/bed4f55ac5dd.js");
+                /*]]>{/literal}*/
+        </script>
+        <!-- end usabilla live embed code -->
+
+
+
+<script async="async" type="text/javascript">
+    (function usabillaVarationInit() {
+        var optManager = window.optimizelyManager;
+        if (optManager && optManager.Experiment && optManager.Variation && optManager.Attributes) {
+
+            var optAttribute = optManager.Attributes;
+            window.usabilla_live("data",
+                {
+                    "custom": {
+                        "optExperiment": optManager.Experiment,
+                        "optVariation": optManager.Variation,
+                        "device": optAttribute !== null ? optAttribute.Device : "unknown"
+                    }
+                });
+        }
+
+    })();
+</script>
+    
+    <script>
+        window.addEventListener('scroll', () => {
+            document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+        });
+
+        function showEducationalModal(id) {
+            $.ajax({
+                type: "GET",
+                url: '/TraderIqEducationalModal/Index',
+                contentType: "application/json; charset=utf-8",
+                data: { "id": id },
+                datatype: "html",
+                success: function (data) {
+                    $("body").append("<div id='educationalModal'></div>");
+                    $('#educationalModal').html(data);
+                },
+                error: function () {
+                    console.log("Failed loading content.");
+                }
+            });
+        };
+
+        function hideEducationalModal() {
+            $("#educationalModal").remove();
+        }
+
+        function showOnlineFlyout(badge) {
+            var badgeValue = badge == 'tbyb-badge' ? 'tbyb' : 'mbg';
+     
+            var flyoutName = 'onlineFlyout';
+            $.ajax({
+                type: "GET",
+                url: '/srp-flyout',
+                contentType: "application/json; charset=utf-8",
+                data: { "flyoutName": flyoutName },
+                datatype: "html",
+                success: function (data) {
+                    $("body").append("<div id='onlineFlyout'></div>");
+                    $('#onlineFlyout').html(data);
+                    $("body").addClass("srp-flyout-modal");
+                    $("html").addClass("osp-flyout-background-overflow-hidden");
+                    getScrollValue();
+                    trackGAEvent('gtm_flyout_badge_click', 'srp badge click', badgeValue);
+                },
+                error: function () {
+                    console.log("Failed loading content.");
+                }
+            });
+        };
+
+        function showOspFlyout(showLearnMore) {
+           var flyoutName = 'ospFlyout';
+           $.ajax({
+               type: "GET",
+               url: '/srp-flyout',
+               contentType: "application/json; charset=utf-8",
+               data: { "flyoutName": flyoutName },
+               datatype: "html",
+               success: function (data) {
+                   $("body").append("<div id='ospFlyout'></div>");
+                   $("body").addClass("srp-flyout-modal");
+                   $("html").addClass("osp-flyout-background-overflow-hidden");
+                   $('#ospFlyout').html(data);
+                   getScrollValue();
+                   if (showLearnMore) { // SRP Flyout
+                       $('#ospModalFooter').show();
+                       $('#buyersHubOSPModalFooter').hide();
+                       $('#sectionContentLast').addClass("section-content-last");
+                   } else { // Buyers Hub Flyout
+                       $('#ospModalFooter').hide();
+                       $('#buyersHubOSPModalFooter').show();
+                       $('#sectionContentLast').addClass("section-content");
+                    }
+                   trackGAEvent('gtm_flyout_osp_logo_click', 'srp osp logo click', '');
+               },
+               error: function () {
+                   console.log("Failed loading content.");
+               }
+           });
+        };
+        function showGetNotifiedFlyout(isBuyerHubFlow, isButton) {
+            var flyoutName = 'getNotifiedFlyout';
+            isButton = arguments.length > 1 ? isButton : false;
+            $.ajax({
+                type: "GET",
+                url: '/srp-flyout',
+                contentType: "application/json; charset=utf-8",
+                data: { "flyoutName": flyoutName },
+                datatype: "html",
+                success: function (data) {
+                    $("body").append("<div id='getNotifiedFlyout'></div>");
+                    $("html").addClass("srp-flyout-modal-open");
+                    $('#getNotifiedFlyout').html(data);
+                    document.getElementById("isBuyerHubFlow").value = isBuyerHubFlow;
+                    if (!isBuyerHubFlow) {
+                        if (isButton) {
+                            trackGAEvent('gtm_search_notification_signup', 'osp notification signup', 'cta click - button');
+                        } else {
+                            trackGAEvent('gtm_search_notification_signup', 'osp notification signup', 'cta click - link');
+                        }
+                    }
+                },
+                error: function () {
+                    console.log("Failed loading content.");
+                }
+            });
+        };
+
+        function showContinueSearchFlyout(isBuyerHubFlow) {
+            var flyoutName = 'continueSearchFlyout';
+            $.ajax({
+                type: "GET",
+                url: '/srp-flyout',
+                contentType: "application/json; charset=utf-8",
+                data: { "flyoutName": flyoutName },
+                datatype: "html",
+                success: function (data) {
+                    $("body").append("<div id='continueSearchFlyout'></div>");
+                    $("html").addClass("srp-flyout-modal-open");
+                    $('#continueSearchFlyout').html(data);
+                    document.getElementById("isBuyerHubFlow").value = isBuyerHubFlow;
+                },
+                error: function () {
+                    console.log("Failed loading content.");
+                }
+            });
+        };
+
+
+
+        function trackGAEvent(event, action, label) {
+            window['dataLayer'].push({ 'event': event, 'eventAction': action, 'eventLabel': label });
+        }
+
+        function getScrollValue() {
+            const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+            document.body.style.top = `-${scrollY}`;
+        } 
+    </script>
+<script async type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1335934745"></script>
+</body>
+</html>
